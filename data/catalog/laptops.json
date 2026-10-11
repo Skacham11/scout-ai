@@ -1,0 +1,178 @@
+[
+  {
+    "id": "macbook-air-13-m4",
+    "name": "MacBook Air 13-inch (M4)",
+    "brand": "Apple",
+    "category": "laptop",
+    "price_usd": 999,
+    "source_url": "https://www.apple.com/macbook-air/",
+    "tags": ["travel", "battery", "lightweight"],
+    "summary": "Base M4 Air, 16GB unified memory. Light and long battery. Weak if you need Windows, lots of RAM, or a discrete GPU.",
+    "specs": {
+      "cpu": "Apple M4",
+      "ram_gb": 16,
+      "storage_gb": 256,
+      "display_inches": 13.6,
+      "display_resolution": "2560x1664",
+      "weight_lbs": 2.7,
+      "battery_wh": 53.8,
+      "gpu": "Integrated 8-core",
+      "ports": ["USB-C/Thunderbolt x2", "MagSafe", "Audio"],
+      "os": "macOS"
+    }
+  },
+  {
+    "id": "thinkpad-t14s-gen5-amd",
+    "name": "ThinkPad T14s Gen 5 (AMD)",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "price_usd": 1549,
+    "source_url": "https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadt/thinkpad-t14s-gen-5-14-inch-amd-windows-laptop/len101t0075",
+    "tags": ["programming", "keyboard", "business"],
+    "summary": "14-inch business laptop. TrackPoint keyboard, Linux-friendly, 32GB in this config. Heavier than an Air, better ports and repair story than most ultraportables.",
+    "specs": {
+      "cpu": "AMD Ryzen 7 8840U",
+      "ram_gb": 32,
+      "storage_gb": 1024,
+      "display_inches": 14.0,
+      "display_resolution": "1920x1200",
+      "weight_lbs": 3.17,
+      "battery_wh": 58,
+      "gpu": "Radeon 780M",
+      "ports": ["USB-C x2", "USB-A", "HDMI", "Audio"],
+      "os": "Windows 11"
+    }
+  },
+  {
+    "id": "framework-13-amd",
+    "name": "Framework Laptop 13 (AMD Ryzen AI 300)",
+    "brand": "Framework",
+    "category": "laptop",
+    "price_usd": 1399,
+    "source_url": "https://frame.work/laptop13",
+    "tags": ["programming", "repairable", "upgradeable"],
+    "summary": "Modular 13.5-inch laptop. RAM and ports are user-replaceable. Good for developers who want to keep the machine for years. DIY-ish, not as polished as Apple.",
+    "specs": {
+      "cpu": "AMD Ryzen AI 9 365",
+      "ram_gb": 32,
+      "storage_gb": 1024,
+      "display_inches": 13.5,
+      "display_resolution": "2880x1920",
+      "weight_lbs": 2.87,
+      "battery_wh": 61,
+      "gpu": "Radeon 880M",
+      "ports": ["Expansion cards (USB-C, HDMI, USB-A, etc.)"],
+      "os": "Windows 11"
+    }
+  },
+  {
+    "id": "zephyrus-g14",
+    "name": "ASUS ROG Zephyrus G14",
+    "brand": "ASUS",
+    "category": "laptop",
+    "price_usd": 1599,
+    "source_url": "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-g14-2024/",
+    "tags": ["gaming", "performance", "programming"],
+    "summary": "14-inch laptop with a discrete RTX GPU. Can game and handle heavier local ML. Worse battery and more fan noise than ultrabooks.",
+    "specs": {
+      "cpu": "AMD Ryzen 9 8945HS",
+      "ram_gb": 16,
+      "storage_gb": 1024,
+      "display_inches": 14.0,
+      "display_resolution": "2560x1600 165Hz",
+      "weight_lbs": 3.3,
+      "battery_wh": 73,
+      "gpu": "NVIDIA GeForce RTX 4060",
+      "ports": ["USB-C", "USB-A", "HDMI", "Audio", "microSD"],
+      "os": "Windows 11"
+    }
+  },
+  {
+    "id": "dell-xps-14",
+    "name": "Dell XPS 14",
+    "brand": "Dell",
+    "category": "laptop",
+    "price_usd": 1649,
+    "source_url": "https://www.dell.com/en-us/shop/dell-laptops/xps-14-laptop/spd/xps-14-9440-laptop",
+    "tags": ["display", "premium", "programming"],
+    "summary": "14.5-inch XPS with a sharp display. Nice for UI work. RAM is soldered. Price climbs fast once you add memory and storage.",
+    "specs": {
+      "cpu": "Intel Core Ultra 7 155H",
+      "ram_gb": 16,
+      "storage_gb": 512,
+      "display_inches": 14.5,
+      "display_resolution": "3200x2000",
+      "weight_lbs": 3.67,
+      "battery_wh": 70,
+      "gpu": "Intel Arc",
+      "ports": ["USB-C/Thunderbolt x2", "USB-C", "Audio"],
+      "os": "Windows 11"
+    }
+  },
+  {
+    "id": "ideapad-slim-3-15",
+    "name": "Lenovo IdeaPad Slim 3 15",
+    "brand": "Lenovo",
+    "category": "laptop",
+    "price_usd": 549,
+    "source_url": "https://www.lenovo.com/us/en/c/laptops/ideapad/",
+    "tags": ["budget", "student"],
+    "summary": "Cheap 15.6-inch student laptop. Fine for docs and classes. 8GB RAM is a bad fit for Docker and a full IDE.",
+    "specs": {
+      "cpu": "AMD Ryzen 5 7520U",
+      "ram_gb": 8,
+      "storage_gb": 256,
+      "display_inches": 15.6,
+      "display_resolution": "1920x1080",
+      "weight_lbs": 3.54,
+      "battery_wh": 47,
+      "gpu": "Radeon 610M",
+      "ports": ["USB-C", "USB-A x2", "HDMI", "Audio", "SD"],
+      "os": "Windows 11"
+    }
+  },
+  {
+    "id": "zenbook-14-oled",
+    "name": "ASUS Zenbook 14 OLED",
+    "brand": "ASUS",
+    "category": "laptop",
+    "price_usd": 899,
+    "source_url": "https://www.asus.com/us/laptops/for-home/zenbook/",
+    "tags": ["value", "programming", "display"],
+    "summary": "14-inch OLED ultrabook around $900. Better screen than most budget machines. 16GB RAM, soldered.",
+    "specs": {
+      "cpu": "AMD Ryzen 7 8840HS",
+      "ram_gb": 16,
+      "storage_gb": 512,
+      "display_inches": 14.0,
+      "display_resolution": "1920x1200 OLED",
+      "weight_lbs": 2.82,
+      "battery_wh": 75,
+      "gpu": "Radeon 780M",
+      "ports": ["USB-C x2", "USB-A", "HDMI", "Audio"],
+      "os": "Windows 11"
+    }
+  },
+  {
+    "id": "surface-laptop-13-copilot",
+    "name": "Microsoft Surface Laptop, 13.8-inch",
+    "brand": "Microsoft",
+    "category": "laptop",
+    "price_usd": 999,
+    "source_url": "https://www.microsoft.com/en-us/d/surface-laptop-7th-edition/",
+    "tags": ["travel", "battery", "touchscreen"],
+    "summary": "Snapdragon X Elite Surface. Strong battery, 13.8-inch touch screen. Some Windows apps still have ARM compatibility gaps.",
+    "specs": {
+      "cpu": "Snapdragon X Elite",
+      "ram_gb": 16,
+      "storage_gb": 256,
+      "display_inches": 13.8,
+      "display_resolution": "2304x1536",
+      "weight_lbs": 2.96,
+      "battery_wh": 66,
+      "gpu": "Adreno GPU",
+      "ports": ["USB-C x2", "Surface Connect", "Audio"],
+      "os": "Windows 11 ARM"
+    }
+  }
+]
