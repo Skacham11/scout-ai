@@ -14,12 +14,33 @@ This is still early. Right now the repo is just the project layout and a small c
 
 ## Setup
 
-Python 3.11+.
+Python 3.11+ (3.12 recommended).
 
 ```bash
-python3 -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
-pip install -e .
+pip install -e ".[dev]"
+```
+
+## Run the API
+
+```bash
+uvicorn scout_ai.main:app --reload --port 8000
+```
+
+Then open http://127.0.0.1:8000/docs
+
+Useful routes:
+
+- `GET /health`
+- `GET /products`
+- `GET /products?max_price=1000&tag=programming`
+- `GET /products/{id}`
+
+## Tests
+
+```bash
+pytest -q
 ```
 
 ## Catalog
