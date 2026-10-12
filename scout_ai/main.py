@@ -3,12 +3,13 @@
 from fastapi import FastAPI, HTTPException, Query
 
 from scout_ai.catalog import get_product, search_products
-from scout_ai.models import Product
+from scout_ai.models import Citation, Product, RetrieveResponse
+from scout_ai.rag.retrieve import retrieve
 
 app = FastAPI(
     title="Scout AI",
     description="Laptop research assistant API",
-    version="0.1.0",
+    version="0.2.0",
 )
 
 
@@ -33,3 +34,22 @@ def read_product(product_id: str) -> Product:
     if product is None:
         raise HTTPException(status_code=404, detail=f"Product not found: {product_id}")
     return product
+
+
+@app.get("/retrieve", response_model=RetrieveResponse)
+def retrieve_evidence(
+    query: str = Query(min_length=1),
+    limit: int = Query(default=5, ge=1, le=20),
+) -> RetrieveResponse:
+    """RAG search over local product docs. Returns cited passages."""
+    chunks = retrieve(query, limit=limit)
+    citations = [
+        Citation(
+            source=chunk.source,
+            quote=chunk.content,
+            chunk_index=chunk.chunk_index,
+            score=round(chunk.score, 4),
+        )
+        for chunk in chunks
+    ]
+    return RetrieveResponse(query=query, citations=citations)

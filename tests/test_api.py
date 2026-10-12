@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 
 from scout_ai.main import app
+from scout_ai.rag.ingest import ingest_docs
 
 client = TestClient(app)
 
@@ -35,3 +36,17 @@ def test_get_product():
 def test_get_product_missing():
     response = client.get("/products/not-a-real-id")
     assert response.status_code == 404
+
+
+def test_retrieve_endpoint():
+    ingest_docs()
+    response = client.get(
+        "/retrieve",
+        params={"query": "lightweight travel laptop battery life", "limit": 3},
+    )
+    assert response.status_code == 200
+    body = response.json()
+    assert body["query"]
+    assert body["citations"]
+    assert "source" in body["citations"][0]
+    assert "quote" in body["citations"][0]
