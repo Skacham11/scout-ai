@@ -1,7 +1,4 @@
-"""Product shapes used by the API.
-
-Pydantic checks the JSON against these fields so bad catalog data fails early.
-"""
+"""Product and RAG response shapes used by the API."""
 
 from pydantic import BaseModel, Field
 
@@ -29,3 +26,15 @@ class Product(BaseModel):
     tags: list[str]
     summary: str
     specs: ProductSpecs
+
+
+class Citation(BaseModel):
+    source: str
+    quote: str
+    chunk_index: int
+    score: float
+
+
+class RetrieveResponse(BaseModel):
+    query: str
+    citations: list[Citation]

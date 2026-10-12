@@ -2,25 +2,31 @@
 
 Laptop buying assistant. You ask a question, it recommends a few machines and shows where the facts came from.
 
-This is still early. Right now the repo is just the project layout and a small catalog of real laptops. Prices are US list-ish snapshots, not live store prices.
+Prices in the catalog are US list-ish snapshots, not live store prices.
 
-## Stack (planned)
+## Stack so far
 
-- FastAPI
-- Postgres + pgvector (RAG)
-- LangGraph
-- FastMCP
-- React (simple UI)
+- FastAPI product API
+- Postgres + pgvector RAG over local product docs
+- LangGraph / FastMCP / React still coming
 
 ## Setup
 
-Python 3.11+ (3.12 recommended).
+Needs Docker Desktop and Python 3.11+ (3.12 recommended).
 
 ```bash
+# start Postgres with pgvector
+docker compose up -d
+
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
+
+# chunk + embed docs into pgvector
+scout-ingest
 ```
+
+Copy `.env.example` to `.env` if you want to override the DB URL.
 
 ## Run the API
 
@@ -28,29 +34,30 @@ pip install -e ".[dev]"
 uvicorn scout_ai.main:app --reload --port 8000
 ```
 
-Then open http://127.0.0.1:8000/docs
+Open http://127.0.0.1:8000/docs
 
-Useful routes:
+Routes:
 
 - `GET /health`
 - `GET /products`
 - `GET /products?max_price=1000&tag=programming`
 - `GET /products/{id}`
+- `GET /retrieve?query=best%20coding%20laptop%20under%201000`
 
 ## Tests
 
 ```bash
+docker compose up -d
 pytest -q
 ```
 
-## Catalog
+## Data
 
-See `data/catalog/laptops.json`. Specs come from public product listings. I am not scraping stores at query time.
+- `data/catalog/laptops.json` — structured product rows
+- `data/docs/*.md` — notes used by RAG (citations come from here)
 
 ## Git
 
 - `main` — stable / demo
 - `develop` — integration
-- `feat/<name>` — off `develop`, then merge back
-
-Do not commit straight to `main`.
+- `feat/<name>` — off `develop`, then merge via PR
