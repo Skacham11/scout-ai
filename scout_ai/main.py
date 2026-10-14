@@ -2,14 +2,21 @@
 
 from fastapi import FastAPI, HTTPException, Query
 
+from scout_ai.agent.graph import run_research
 from scout_ai.catalog import get_product, search_products
-from scout_ai.models import Citation, Product, RetrieveResponse
+from scout_ai.models import (
+    Citation,
+    Product,
+    ResearchRequest,
+    ResearchResponse,
+    RetrieveResponse,
+)
 from scout_ai.rag.retrieve import retrieve
 
 app = FastAPI(
     title="Scout AI",
     description="Laptop research assistant API",
-    version="0.2.0",
+    version="0.3.0",
 )
 
 
@@ -53,3 +60,9 @@ def retrieve_evidence(
         for chunk in chunks
     ]
     return RetrieveResponse(query=query, citations=citations)
+
+
+@app.post("/research", response_model=ResearchResponse)
+def research(request: ResearchRequest) -> ResearchResponse:
+    """Run the LangGraph research workflow for a buying question."""
+    return run_research(request.question)

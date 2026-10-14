@@ -8,7 +8,8 @@ Prices in the catalog are US list-ish snapshots, not live store prices.
 
 - FastAPI product API
 - Postgres + pgvector RAG over local product docs
-- LangGraph / FastMCP / React still coming
+- LangGraph research agent (`POST /research`)
+- FastMCP / React still coming
 
 ## Setup
 
@@ -43,6 +44,7 @@ Routes:
 - `GET /products?max_price=1000&tag=programming`
 - `GET /products/{id}`
 - `GET /retrieve?query=best%20coding%20laptop%20under%201000`
+- `POST /research` with body `{"question": "best laptop under $1000 for programming"}`
 
 ## Tests
 

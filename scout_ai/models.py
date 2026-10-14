@@ -38,3 +38,19 @@ class Citation(BaseModel):
 class RetrieveResponse(BaseModel):
     query: str
     citations: list[Citation]
+
+
+class ResearchRequest(BaseModel):
+    question: str = Field(min_length=3)
+
+
+class ResearchResponse(BaseModel):
+    question: str
+    top_pick: Product | None
+    alternatives: list[Product]
+    why: list[str]
+    disadvantages: list[str]
+    missing_info: list[str]
+    citations: list[Citation]
+    tools_used: list[str] = Field(default_factory=list)
+    steps: list[str] = Field(default_factory=list)

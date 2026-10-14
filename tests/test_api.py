@@ -50,3 +50,17 @@ def test_retrieve_endpoint():
     assert body["citations"]
     assert "source" in body["citations"][0]
     assert "quote" in body["citations"][0]
+
+
+def test_research_endpoint():
+    ingest_docs()
+    response = client.post(
+        "/research",
+        json={"question": "best laptop under $1000 for programming"},
+    )
+    assert response.status_code == 200
+    body = response.json()
+    assert body["top_pick"] is not None
+    assert body["top_pick"]["price_usd"] <= 1000
+    assert body["citations"]
+    assert body["steps"]
