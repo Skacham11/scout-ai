@@ -1,7 +1,7 @@
 """FastMCP server for Scout AI.
 
-Exposes the same catalog/RAG tools that the LangGraph agent uses, so Cursor
-or another MCP client can research laptops without going through the React UI.
+Exposes the same catalog/RAG tools that the LangGraph agent uses, so Claude
+Desktop (or another MCP client) can research laptops without the React UI.
 """
 
 from __future__ import annotations
