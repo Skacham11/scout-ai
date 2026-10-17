@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scout-ai"
-version = "0.3.0"
+version = "0.4.0"
 description = "Laptop research assistant"
 requires-python = ">=3.11"
 dependencies = [
@@ -15,19 +15,23 @@ dependencies = [
     "psycopg[binary]>=3.2.0",
     "pgvector>=0.3.0",
     "langgraph>=0.2.50",
+    "fastmcp>=2.0.0",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
     "httpx>=0.27.0",
 ]
 
 [project.scripts]
 scout-ingest = "scout_ai.rag.ingest:main"
+scout-mcp = "scout_ai.mcp_server:main"
 
 [tool.setuptools.packages.find]
 include = ["scout_ai*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+asyncio_mode = "auto"
