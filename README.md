@@ -26,6 +26,10 @@ Prices in the catalog are US list-ish snapshots, not live store prices.
 
 ![Scout AI citations and disadvantages](docs/screenshots/ui-citations.png)
 
+### Claude Desktop (MCP tools)
+
+![Scout AI tools used from Claude Desktop](docs/screenshots/claude-mcp.png)
+
 ## First-time setup
 
 Needs Docker Desktop and Python 3.11+ (3.12 recommended).
