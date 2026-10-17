@@ -1,6 +1,7 @@
 """FastAPI entrypoint for Scout AI."""
 
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 
 from scout_ai.agent.graph import run_research
 from scout_ai.catalog import get_product, search_products
@@ -16,7 +17,17 @@ from scout_ai.rag.retrieve import retrieve
 app = FastAPI(
     title="Scout AI",
     description="Laptop research assistant API",
-    version="0.3.0",
+    version="0.5.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://127.0.0.1:5173",
+        "http://localhost:5173",
+    ],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

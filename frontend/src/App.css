@@ -1,0 +1,168 @@
+:root {
+  color: #1c1917;
+  background: #f5f2eb;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #e8efe4 0%, transparent 40%),
+    linear-gradient(180deg, #f7f4ee 0%, #efe8dc 100%);
+}
+
+.page {
+  width: min(760px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+header {
+  margin-bottom: 1.75rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: #4d6b4a;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.lede {
+  margin: 0;
+  color: #57534e;
+  max-width: 38rem;
+}
+
+.ask {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #ddd4c4;
+}
+
+label {
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 0.85rem;
+  border: 1px solid #cbbfaa;
+  background: #fffdf8;
+  font: inherit;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip,
+button[type='submit'] {
+  font: inherit;
+  cursor: pointer;
+}
+
+.chip {
+  border: 1px solid #cbbfaa;
+  background: #fff;
+  padding: 0.35rem 0.65rem;
+  color: #44403c;
+}
+
+button[type='submit'] {
+  justify-self: start;
+  border: 0;
+  background: #2f4f2f;
+  color: #f8faf5;
+  padding: 0.7rem 1.1rem;
+  font-weight: 600;
+}
+
+button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #9f1239;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  padding: 0.75rem 1rem;
+}
+
+.results {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.product {
+  padding: 1rem 0;
+  border-top: 1px solid #ddd4c4;
+}
+
+.label {
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #4d6b4a;
+}
+
+.meta {
+  color: #57534e;
+  margin-top: 0.25rem;
+}
+
+ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+
+blockquote {
+  margin: 0.75rem 0 0;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-left: 3px solid #4d6b4a;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote footer {
+  margin-top: 0.5rem;
+  color: #78716c;
+  font-size: 0.85rem;
+}
+
+.steps {
+  color: #78716c;
+  font-size: 0.9rem;
+}
