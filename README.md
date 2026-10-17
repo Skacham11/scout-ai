@@ -9,7 +9,8 @@ Prices in the catalog are US list-ish snapshots, not live store prices.
 - FastAPI product API
 - Postgres + pgvector RAG over local product docs
 - LangGraph research agent (`POST /research`)
-- FastMCP / React still coming
+- FastMCP server (`scout-mcp`)
+- React UI still coming
 
 ## Setup
 
@@ -45,6 +46,16 @@ Routes:
 - `GET /products/{id}`
 - `GET /retrieve?query=best%20coding%20laptop%20under%201000`
 - `POST /research` with body `{"question": "best laptop under $1000 for programming"}`
+
+## Run the MCP server
+
+```bash
+scout-mcp
+```
+
+This exposes the same tools the agent uses (`search_catalog`, `retrieve_evidence`, `compare_products`, `research_laptops`) over MCP.
+
+For Cursor, copy `mcp.cursor.example.json` into your MCP config and point `command` / `cwd` at this repo.
 
 ## Tests
 
