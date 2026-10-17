@@ -12,6 +12,20 @@ Prices in the catalog are US list-ish snapshots, not live store prices.
 - FastMCP server (`scout-mcp`)
 - React + TypeScript UI (`frontend/`)
 
+## Screenshots
+
+### API docs (`/docs`)
+
+![Scout AI FastAPI docs](docs/screenshots/api-docs.png)
+
+### Research UI
+
+![Scout AI research result](docs/screenshots/ui-research.png)
+
+### Citations and agent steps
+
+![Scout AI citations and disadvantages](docs/screenshots/ui-citations.png)
+
 ## First-time setup
 
 Needs Docker Desktop and Python 3.11+ (3.12 recommended).
