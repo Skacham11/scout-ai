@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scout-ai"
-version = "0.4.0"
+version = "0.5.0"
 description = "Laptop research assistant"
 requires-python = ">=3.11"
 dependencies = [
