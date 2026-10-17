@@ -45,13 +45,34 @@ Open http://127.0.0.1:5173
 
 The UI posts to `/api/research`, and Vite proxies that to the FastAPI server.
 
-## Run the MCP server
+## Claude Desktop (MCP)
+
+Keep Postgres up and docs ingested first:
 
 ```bash
-scout-mcp
+docker compose up -d
+scout-ingest
 ```
 
-See `mcp.cursor.example.json` for a Cursor config sketch.
+Add this to Claude Desktop → Settings → Developer → Edit Config
+(`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "scout-ai": {
+      "command": "/Users/surajkacham/Dropbox/Mac/Desktop/Scout AI/.venv/bin/python",
+      "args": ["-m", "scout_ai.mcp_server"],
+      "cwd": "/Users/surajkacham/Dropbox/Mac/Desktop/Scout AI"
+    }
+  }
+}
+```
+
+Fully quit Claude Desktop (Cmd+Q) and reopen. You should see tools like
+`search_catalog`, `retrieve_evidence`, and `research_laptops`.
+
+Same config is saved in `mcp.claude.example.json`.
 
 ## Tests
 

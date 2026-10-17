@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "scout-ai": {
-      "command": "/Users/YOU/path/to/Scout AI/.venv/bin/python",
-      "args": ["-m", "scout_ai.mcp_server"],
-      "cwd": "/Users/YOU/path/to/Scout AI"
-    }
-  }
-}
