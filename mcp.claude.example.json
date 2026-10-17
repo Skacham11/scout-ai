@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "scout-ai": {
+      "command": "/Users/surajkacham/Dropbox/Mac/Desktop/Scout AI/.venv/bin/python",
+      "args": ["-m", "scout_ai.mcp_server"],
+      "cwd": "/Users/surajkacham/Dropbox/Mac/Desktop/Scout AI"
+    }
+  }
+}
